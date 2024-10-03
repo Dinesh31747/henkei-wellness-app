@@ -1,38 +1,42 @@
 import React, { useState } from 'react';
-import { Container, TextField, Button, Typography, Box } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
+import { Container, Typography, Button, RadioGroup, FormControlLabel, Radio } from '@mui/material';
 
-const Login = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+const Login = ({ setRole }) => {
+  const [selectedRole, setSelectedRole] = useState('user'); // Default to user
+  const navigate = useNavigate();
 
-  const handleLogin = (e) => {
-    e.preventDefault();
-    // Handle login logic here
+  const handleLogin = () => {
+    localStorage.setItem('role', selectedRole); // Store role in localStorage
+    setRole(selectedRole);
+    if (selectedRole === 'admin') {
+      navigate('/admin'); // Redirect to admin page
+    } else {
+      navigate('/user'); // Redirect to user page
+    }
   };
 
   return (
     <Container maxWidth="sm">
-      <Box mt={4} p={2} boxShadow={3}>
-        <Typography variant="h4" gutterBottom>Login</Typography>
-        <form onSubmit={handleLogin}>
-          <TextField 
-            fullWidth 
-            label="Email" 
-            margin="normal" 
-            value={email} 
-            onChange={(e) => setEmail(e.target.value)} 
-          />
-          <TextField 
-            fullWidth 
-            label="Password" 
-            type="password" 
-            margin="normal" 
-            value={password} 
-            onChange={(e) => setPassword(e.target.value)} 
-          />
-          <Button type="submit" variant="contained" color="primary" fullWidth>Login</Button>
-        </form>
-      </Box>
+      <Typography variant="h4" gutterBottom>Login</Typography>
+
+      <RadioGroup
+        row
+        value={selectedRole}
+        onChange={(e) => setSelectedRole(e.target.value)}
+      >
+        <FormControlLabel value="user" control={<Radio />} label="User" />
+        <FormControlLabel value="admin" control={<Radio />} label="Admin" />
+      </RadioGroup>
+
+      <Button
+        variant="contained"
+        color="primary"
+        onClick={handleLogin}
+        style={{ marginTop: '20px' }}
+      >
+        Login as {selectedRole === 'admin' ? 'Admin' : 'User'}
+      </Button>
     </Container>
   );
 };

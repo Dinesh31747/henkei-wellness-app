@@ -1,18 +1,3 @@
-/*import React from 'react';
-import { Container, Typography } from '@mui/material';
-
-const Fitness = () => {
-  return (
-    <Container>
-      <Typography variant="h4" gutterBottom>Fitness Programs</Typography>
-      <Typography variant="body1">
-        Explore fitness programs designed to improve your physical health. Participate in tailored workouts and track your progress.
-      </Typography>
-    </Container>
-  );
-};
-
-export default Fitness;*/
 import React from 'react';
 import { Container, Grid, Typography} from '@mui/material';
 import FitnessPlanCard from '../components/FitnessPlanCard';
@@ -36,6 +21,12 @@ const Fitness = () => {
             description: "A rigorous 12-week strength training program.",
             image: "https://via.placeholder.com/300x140?text=Advanced+Strength",
             link: "/fitness-plans/advanced",
+        },
+        {
+            name: "Winter Arc",
+            description: "A rigorous 12-week strength training program.",
+            image: "https://via.placeholder.com/300x140?text=Winter+Arc",
+            link: "/winterarc",
         }
     ];
 

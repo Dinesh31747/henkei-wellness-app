@@ -13,7 +13,6 @@ const HomePage = () => {
       </Typography>
 
       <Box mt={4}>
-        <Typography variant="h3" gutterBottom>Welcome to Health & Wellness Platform</Typography>
         <HomeCarousel />
       </Box>
 
