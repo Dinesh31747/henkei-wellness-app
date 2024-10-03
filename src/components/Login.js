@@ -1,18 +1,29 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Container, Typography, Button, RadioGroup, FormControlLabel, Radio } from '@mui/material';
+import { Container, Typography, Button, RadioGroup, FormControlLabel, Radio, TextField } from '@mui/material';
 
-const Login = ({ setRole }) => {
+const Login = ({ onLoginSuccess }) => {
   const [selectedRole, setSelectedRole] = useState('user'); // Default to user
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
   const navigate = useNavigate();
 
+  // Example hardcoded credentials for demo purposes
+  const credentials = {
+    admin: { username: 'admin', password: 'admin123' },
+    user: { username: 'user', password: 'user123' }
+  };
+
   const handleLogin = () => {
-    localStorage.setItem('role', selectedRole); // Store role in localStorage
-    setRole(selectedRole);
-    if (selectedRole === 'admin') {
-      navigate('/admin'); // Redirect to admin page
+    const validCredentials = credentials[selectedRole];
+
+    // Check if entered credentials match the stored ones
+    if (username === validCredentials.username && password === validCredentials.password) {
+      onLoginSuccess(selectedRole); // Call the function passed from the parent
+      navigate(selectedRole === 'admin' ? '/admin' : '/user');
     } else {
-      navigate('/user'); // Redirect to user page
+      setError('Invalid username or password');
     }
   };
 
@@ -28,6 +39,26 @@ const Login = ({ setRole }) => {
         <FormControlLabel value="user" control={<Radio />} label="User" />
         <FormControlLabel value="admin" control={<Radio />} label="Admin" />
       </RadioGroup>
+
+      <TextField
+        label="Username"
+        fullWidth
+        margin="normal"
+        value={username}
+        onChange={(e) => setUsername(e.target.value)}
+        error={Boolean(error)} // Show error state if error exists
+        helperText={error} // Show error message
+      />
+      <TextField
+        label="Password"
+        type="password"
+        fullWidth
+        margin="normal"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+        error={Boolean(error)} // Show error state if error exists
+        helperText={error} // Show error message
+      />
 
       <Button
         variant="contained"

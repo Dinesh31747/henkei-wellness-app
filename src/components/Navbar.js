@@ -3,7 +3,7 @@ import { AppBar, Toolbar, Typography, Button } from '@mui/material';
 import { Link } from 'react-router-dom';
 import './Navbar.css'; // Add custom styling if needed
 
-const Navbar = () => {
+const Navbar = ({ role, handleLogout }) => {
   return (
     <AppBar position="static">
       <Toolbar>
@@ -14,8 +14,19 @@ const Navbar = () => {
         <Button color="inherit" component={Link} to="/mental-health">Mental Health</Button>
         <Button color="inherit" component={Link} to="/fitness">Fitness</Button>
         <Button color="inherit" component={Link} to="/nutrition">Nutrition</Button>
-        <Button color="inherit" component={Link} to="/login">Login</Button>
-        <Button color="inherit" component={Link} to="/signup">Signup</Button>
+
+        {role === 'admin' && (
+          <Button color="inherit" component={Link} to="/admin">Admin</Button>
+        )}
+
+        {role ? (
+          <Button color="inherit" onClick={handleLogout}>Logout</Button>
+        ) : (
+          <>
+            <Button color="inherit" component={Link} to="/login">Login</Button>
+            <Button color="inherit" component={Link} to="/signup">Signup</Button>
+          </>
+        )}
       </Toolbar>
     </AppBar>
   );
