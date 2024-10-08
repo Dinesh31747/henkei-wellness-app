@@ -9,6 +9,8 @@ import MentalHealth from './components/MentalHealth';
 import Fitness from './components/Fitness';
 import Nutrition from './components/Nutrition';
 import Login from './components/Login';
+import Notifications from './components/Notifications';
+import Blog from './components/Blog';
 import Signup from './components/Signup';
 import YetToBeCreated from './components/YetToBeCreated';
 import WinterArcPlan from './components/WinterArcPlan'; 
@@ -81,6 +83,8 @@ function App() {
             <Route path="/signup" element={<Signup />} />
             <Route path="/developing" element={<YetToBeCreated />} />
             <Route path="/winterarc" element={<WinterArcPlan />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/notifications" element={<Notifications />} />
           </Routes>
 
           <Footer />

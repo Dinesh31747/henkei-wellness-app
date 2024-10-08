@@ -7,7 +7,7 @@ import HomeCarousel from '../components/HomeCarousel';
 const HomePage = () => {
   return (
     <Container>
-      <Typography variant="h3" gutterBottom>Welcome to the Health & Wellness Platform</Typography>
+      <Typography variant="h3" gutterBottom>Welcome to the Henkei & Wellness Platform</Typography>
       <Typography variant="body1" paragraph>
         Access resources for mental health, fitness, and nutrition to help improve your overall well-being.
       </Typography>

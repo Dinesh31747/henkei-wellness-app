@@ -2,30 +2,35 @@ import React from 'react';
 import { Container, Grid, Typography } from '@mui/material';
 import MentalHealthPlanCard from '../components/MentalHealthPlanCard';
 
+import family from '../assets/family.jpeg'
+import individual from '../assets/individual.png'
+import group from '../assets/group.jpeg'
+import crisis from '../assets/crisis.jpeg'
+
 const MentalHealth = () => {
     const mentalHealthPlans = [
         {
             name: "Individual Therapy",
             description: "One-on-one sessions with a licensed therapist to address personal mental health concerns.",
-            image: "https://via.placeholder.com/300x140?text=Individual+Therapy",
+            image: individual,
             link: "/developing",
         },
         {
             name: "Group Therapy",
             description: "Engage in group sessions to share experiences and support with others facing similar challenges.",
-            image: "https://via.placeholder.com/300x140?text=Group+Therapy",
+            image: group,
             link: "/developing",
         },
         {
             name: "Family Counseling",
             description: "Work through family-related concerns with the help of a professional counselor.",
-            image: "https://via.placeholder.com/300x140?text=Family+Counseling",
+            image: family,
             link: "/developing",
         },
         {
             name: "Crisis Counseling",
             description: "Immediate support for individuals in crisis situations who need urgent mental health help.",
-            image: "https://via.placeholder.com/300x140?text=Crisis+Counseling",
+            image: crisis,
             link: "/developing",
         }
     ];
