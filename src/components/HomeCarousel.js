@@ -11,19 +11,19 @@ const items = [
         name: "Mental Health Resources",
         description: "Find help and support for mental well-being.",
         image: mentalHealth,
-        link: "/developing" // Add link for the item
+        link: "/mental-health" // Add link for the item
     },
     {
         name: "Fitness Programs",
         description: "Get access to fitness programs tailored for you.",
         image: fitnessPlan,
-        link: "/developing" // Add link for the item
+        link: "/nutrition" // Add link for the item
     },
     {
         name: "Nutrition Advice",
         description: "Personalized nutrition guidance for a healthier you.",
         image: nutritionPlan,
-        link: "/developing" // Add link for the item
+        link: "/nutrition" // Add link for the item
     }
 ];
 

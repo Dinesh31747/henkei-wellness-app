@@ -8,25 +8,25 @@ const MentalHealth = () => {
             name: "Individual Therapy",
             description: "One-on-one sessions with a licensed therapist to address personal mental health concerns.",
             image: "https://via.placeholder.com/300x140?text=Individual+Therapy",
-            link: "/mental-health-plans/individual",
+            link: "/developing",
         },
         {
             name: "Group Therapy",
             description: "Engage in group sessions to share experiences and support with others facing similar challenges.",
             image: "https://via.placeholder.com/300x140?text=Group+Therapy",
-            link: "/mental-health-plans/group",
+            link: "/developing",
         },
         {
             name: "Family Counseling",
             description: "Work through family-related concerns with the help of a professional counselor.",
             image: "https://via.placeholder.com/300x140?text=Family+Counseling",
-            link: "/mental-health-plans/family",
+            link: "/developing",
         },
         {
             name: "Crisis Counseling",
             description: "Immediate support for individuals in crisis situations who need urgent mental health help.",
             image: "https://via.placeholder.com/300x140?text=Crisis+Counseling",
-            link: "/mental-health-plans/crisis",
+            link: "/developing",
         }
     ];
 

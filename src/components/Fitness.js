@@ -2,30 +2,35 @@ import React from 'react';
 import { Container, Grid, Typography} from '@mui/material';
 import FitnessPlanCard from '../components/FitnessPlanCard';
 
+import basic from '../assets/basic.png'
+import inter from '../assets/inter.png'
+import advanced from '../assets/advance.png'
+import winterarc from '../assets/winterarc.jpg'
+
 const Fitness = () => {
     const fitnessPlans = [
         {
             name: "Beginner's Workout",
             description: "A 4-week program to get you started on your fitness journey.",
-            image: "https://via.placeholder.com/300x140?text=Beginner%27s+Workout",
-            link: "/fitness-plans/beginner",
+            image: basic,
+            link: "/developing",
         },
         {
             name: "Intermediate Training",
             description: "An 8-week program designed for those who have some experience.",
-            image: "https://via.placeholder.com/300x140?text=Intermediate+Training",
-            link: "/fitness-plans/intermediate",
+            image: inter,
+            link: "/developing",
         },
         {
             name: "Advanced Strength",
             description: "A rigorous 12-week strength training program.",
-            image: "https://via.placeholder.com/300x140?text=Advanced+Strength",
-            link: "/fitness-plans/advanced",
+            image: advanced,
+            link: "/developing",
         },
         {
             name: "Winter Arc",
             description: "A rigorous 12-week strength training program.",
-            image: "https://via.placeholder.com/300x140?text=Winter+Arc",
+            image: winterarc,
             link: "/winterarc",
         }
     ];

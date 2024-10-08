@@ -2,31 +2,35 @@ import React from 'react';
 import { Container, Grid, Typography } from '@mui/material';
 import NutritionAdviceCard from '../components/NutritionAdviceCard';
 
+import vegan from '../assets/vegan.jpeg'
+import weightloss from '../assets/weightloss.jpeg'
+import musclegain from '../assets/musclegain.jpeg'
+import balanced from '../assets/balanced.jpeg'
 const Nutrition = () => {
     const nutritionPlans = [
         {
             name: "Balanced Diet Plan",
             description: "A well-rounded diet plan for maintaining a healthy lifestyle.",
-            image: "https://via.placeholder.com/300x140?text=Balanced+Diet+Plan",
-            link: "/nutrition-advice/balanced-diet",
+            image: balanced,
+            link: "/developing",
         },
         {
             name: "Weight Loss Plan",
             description: "A tailored plan focused on safe and sustainable weight loss.",
-            image: "https://via.placeholder.com/300x140?text=Weight+Loss+Plan",
-            link: "/nutrition-advice/weight-loss",
+            image: weightloss,
+            link: "/developing",
         },
         {
             name: "Muscle Gain Plan",
             description: "A high-protein plan aimed at building muscle and strength.",
-            image: "https://via.placeholder.com/300x140?text=Muscle+Gain+Plan",
-            link: "/nutrition-advice/muscle-gain",
+            image: musclegain,
+            link: "/developing",
         },
         {
             name: "Vegan Nutrition",
             description: "A plant-based nutrition guide for those following a vegan diet.",
-            image: "https://via.placeholder.com/300x140?text=Vegan+Nutrition",
-            link: "/nutrition-advice/vegan",
+            image: vegan,
+            link: "/developing",
         }
     ];
 
