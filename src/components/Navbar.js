@@ -18,6 +18,7 @@ const Navbar = ({ role, handleLogout, notificationCount }) => {
         <Button color="inherit" component={Link} to="/mental-health">Mental Health</Button>
         <Button color="inherit" component={Link} to="/fitness">Fitness</Button>
         <Button color="inherit" component={Link} to="/nutrition">Nutrition</Button>
+        <Button color="inherit" component={Link} to="/profile">Profile</Button>
 
         {/* Admin link (visible only for admins) */}
         {role === 'admin' && (

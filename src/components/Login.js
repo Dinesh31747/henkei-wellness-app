@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Container, Typography, Button, RadioGroup, FormControlLabel, Radio, TextField } from '@mui/material';
+import emailjs from 'emailjs-com';
 
 const Login = ({ onLoginSuccess }) => {
   const [selectedRole, setSelectedRole] = useState('user'); // Default to user
@@ -9,23 +10,36 @@ const Login = ({ onLoginSuccess }) => {
   const [error, setError] = useState('');
   const navigate = useNavigate();
 
-  // Example hardcoded credentials for demo purposes
-  const credentials = {
-    admin: { username: 'admin', password: 'admin123' },
-    user: { username: 'user', password: 'user123' }
-  };
-
   const handleLogin = () => {
-    const validCredentials = credentials[selectedRole];
-
-    // Check if entered credentials match the stored ones
-    if (username === validCredentials.username && password === validCredentials.password) {
-      onLoginSuccess(selectedRole); // Call the function passed from the parent
-      navigate(selectedRole === 'admin' ? '/admin' : '/user');
+    const storedUser = JSON.parse(localStorage.getItem('user'));
+  
+    if (storedUser) {
+      if (username === storedUser.email && password === storedUser.password) {
+        if (storedUser.role === selectedRole) {
+          // Send login confirmation email
+          emailjs
+            .send(
+              'service_2gshur8',
+              'template_1mjjnik',
+              { email: storedUser.email, role: storedUser.role },
+              'f6byxJMxQ8o6_M1Ue'
+            )
+            .then(() => {
+              onLoginSuccess(selectedRole);
+              navigate(`/${selectedRole}`);
+            })
+            .catch((error) => console.error('Failed to send email:', error));
+        } else {
+          setError('Role mismatch, please select the correct role.');
+        }
+      } else {
+        setError('Invalid username or password.');
+      }
     } else {
-      setError('Invalid username or password');
+      setError('No user found, please sign up first.');
     }
   };
+  
 
   return (
     <Container maxWidth="sm">

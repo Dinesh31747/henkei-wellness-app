@@ -18,11 +18,18 @@ const MentalHealthPlanCard = ({ plan }) => {
                 <Typography variant="body2" color="text.secondary">
                     {plan.description}
                 </Typography>
-                <Link to={plan.link} style={{ textDecoration: 'none' }}>
-                    <Button variant="contained" color="primary" style={{ marginTop: '10px' }}>
-                        Learn More
-                    </Button>
-                </Link>
+                <div style={{ marginTop: '10px' }}>
+                    <Link to={plan.link} style={{ textDecoration: 'none', marginRight: '10px' }}>
+                        <Button variant="contained" color="primary">
+                            Learn More
+                        </Button>
+                    </Link>
+                    <Link to={`/payment?plan=${plan.name}`} style={{ textDecoration: 'none' }}>
+                        <Button variant="contained" color="secondary">
+                            Subscribe Now
+                        </Button>
+                    </Link>
+                </div>
             </CardContent>
         </Card>
     );

@@ -14,7 +14,11 @@ import Blog from './components/Blog';
 import Signup from './components/Signup';
 import YetToBeCreated from './components/YetToBeCreated';
 import WinterArcPlan from './components/WinterArcPlan'; 
+import Beginner from './components/ExercisePlan';
 import { ContentProvider } from './context/ContentContext';
+import Inter from './components/IntermediatePlan'
+import Profile from './components/Profile';
+import Payment from './components/Payment';
 
 // Protected Route for Admin
 const ProtectedAdminRoute = ({ role, children }) => {
@@ -85,6 +89,10 @@ function App() {
             <Route path="/winterarc" element={<WinterArcPlan />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/notifications" element={<Notifications />} />
+            <Route path="/beginner" element={<Beginner />} />            
+            <Route path="/inter" element={<Inter />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/payment" element={<Payment />} />
           </Routes>
 
           <Footer />

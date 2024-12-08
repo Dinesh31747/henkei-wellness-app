@@ -13,13 +13,13 @@ const Fitness = () => {
             name: "Beginner's Workout",
             description: "A 4-week program to get you started on your fitness journey.",
             image: basic,
-            link: "/developing",
+            link: "/beginner",
         },
         {
             name: "Intermediate Training",
             description: "An 8-week program designed for those who have some experience.",
             image: inter,
-            link: "/developing",
+            link: "/inter",
         },
         {
             name: "Advanced Strength",
